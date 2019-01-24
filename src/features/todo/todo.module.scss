@@ -1,0 +1,25 @@
+@import "../../assets/styles/variables";
+
+.todo {
+  flex-grow: 1;
+  
+  &__container {
+    background-image: url("../../assets/images/map_bg.png");
+    min-height: 1000px;
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__tasks {
+    max-width: 335px;
+    padding: 15px 30px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  &__form {
+    max-width: 500px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,48 @@
+.add-button {
+  background-color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px rgba(0,0,0, .2);
+  margin-bottom: 30px;
+  
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &:active {
+    box-shadow: 0 0 5px 1px rgba(0,0,0, .2) inset;
+  }
+  
+  &__text {
+    font-family: 'Roboto-Regular';
+    display: inline-block;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #4c71fe;
+    position: relative;
+    user-select: none;
+    
+    &::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 2px;
+      background-color: #4c71fe;
+      position: absolute;
+      left: -28px;
+      top: 10px;
+    }
+  
+    &::after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 16px;
+      background-color: #4c71fe;
+      position: absolute;
+      left: -21px;
+      top: 3px;
+    }
+  }
+}

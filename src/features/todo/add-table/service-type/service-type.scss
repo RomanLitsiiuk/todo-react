@@ -1,0 +1,38 @@
+.service-type {
+  background-color: #fff;
+  padding: 20px 40px;
+  font-family: 'Roboto-Regular';
+  border-bottom: 1px solid #f1f1f1;
+  
+  &__heading {
+    color: #909090;
+    text-transform: uppercase;
+    padding: 5px 0;
+  }
+  
+  &__icons-wrap {
+    display: flex;
+  }
+  
+  &__icon {
+    padding: 10px 5px;
+    width: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__image-wrap {
+    flex-grow: 1;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  &__description {
+    font-family: 'Roboto-Regular';
+    font-size: 15px;
+    padding-top: 10px;
+  }
+}

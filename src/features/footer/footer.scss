@@ -1,0 +1,25 @@
+@import "../../assets/styles/variables";
+
+.footer {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  
+  &__container {
+    @extend .container;
+    border-top: 1px solid #ccc;
+    height: 100%;
+  }
+  
+  &__logo-wrap {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 22px 45px;
+  }
+  
+  &__logo {
+    font-family: 'Sarabun-Bold';
+    color: #fa4c6f;
+    font-size: 26px;
+  }
+}
