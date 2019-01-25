@@ -3,6 +3,8 @@ import './add-table.scss';
 import NewTask from './new-task/new-task-component';
 import Location from './location/location-component';
 import ServiceType from './service-type/service-type-component';
+import PlumberTask from './plumber-tasks/plumber-tasks-component';
+import TaskDescriptor from "./task-descriptor/task-descriptor";
 
 const AddTable = (props) => {
   return (
@@ -13,6 +15,15 @@ const AddTable = (props) => {
       />
       <Location location='141 Ogunlana Dr, Lagos 10128' />
       <ServiceType />
+      <PlumberTask tasks={[
+        'Unblock a toilet',
+        'Unblock a sink',
+        'Fix a water leak',
+        'Install a sink',
+        'Install a shower',
+        'Install a toilet']}
+      />
+      <TaskDescriptor descriptor="My dauther's teddy bear sank in the toilet" />
     </div>
   );
 };

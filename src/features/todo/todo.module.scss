@@ -4,8 +4,8 @@
   flex-grow: 1;
   
   &__container {
-    background-image: url("../../assets/images/map_bg.png");
-    min-height: 1000px;
+    background-image: url("../../assets/images/map.png");
+    min-height: 1200px;
     @extend .container;
     display: flex;
     justify-content: space-between;

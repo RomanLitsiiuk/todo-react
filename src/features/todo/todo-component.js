@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AddButton from './add-button/add-button-component';
 import Task from './task/task-component';
 import styles from './todo.module.scss';
-import AddTable from "./add-table/add-table-component";
+import AddTable from './add-table/add-table-component';
 
 class Todo extends Component {
   constructor(props) {
