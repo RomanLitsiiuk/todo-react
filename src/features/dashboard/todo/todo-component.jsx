@@ -1,8 +1,10 @@
 import React from 'react';
-import './task.scss';
+
 import Button from '../../../components/button/button-component';
 
-const Task = ({ todo, deleteTodo }) => (
+import './todo.scss';
+
+const Todo = ({ todo, deleteTodo }) => (
   <div className="task">
     <p className="task__date">{todo.date}</p>
     <p className="task__text">{todo.task}</p>
@@ -19,4 +21,4 @@ const Task = ({ todo, deleteTodo }) => (
   </div>
 );
 
-export default Task;
+export default Todo;

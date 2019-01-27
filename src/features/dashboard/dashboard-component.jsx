@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import AddButton from './add-button/add-button-component';
-import Task from './todo/task-component';
-import styles from './dashboard.module.scss';
+import Task from './todo/todo-component';
 import AddTable from './add-table/add-table-component';
+
+import styles from './dashboard.module.scss';
 
 import Icon1 from '../../assets/icons/noun_321339_cc.svg';
 import Icon2 from '../../assets/icons/noun_321315_cc.svg';
@@ -144,6 +145,7 @@ class Dashboard extends Component {
               serviceTypes={serviceTypes}
               currentServiceType={newTodo.serviceType}
               handleServiceTypeChange={this.handleServiceTypeChange}
+              newTodo={newTodo}
             />
           </div>
         </div>
