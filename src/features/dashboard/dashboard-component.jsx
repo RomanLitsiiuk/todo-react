@@ -4,75 +4,147 @@ import Task from './todo/task-component';
 import styles from './dashboard.module.scss';
 import AddTable from './add-table/add-table-component';
 
-class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isFormActive: false,
-      todos: [{
-        date: 'Tomorrow, Jun 24, 16:00',
-        task: 'Install a shower',
-      }, {
-        date: 'Monday, Jun 26, 14:00',
-        task: 'I need a plumber to unblock a toilet',
-      }],
-    };
-    this.activateForm = this.activateForm.bind(this);
-    this.handleCloseTable = this.handleCloseTable.bind(this);
-    this.deleteTask = this.deleteTask.bind(this);
-  }
+import Icon1 from '../../assets/icons/noun_321339_cc.svg';
+import Icon2 from '../../assets/icons/noun_321315_cc.svg';
+import Icon3 from '../../assets/icons/noun_321363_cc.svg';
+import Icon4 from '../../assets/icons/noun_321399_cc.svg';
+import Icon5 from '../../assets/icons/noun_321395_cc.svg';
 
-  componentWillMount() {
-    document.addEventListener('keydown', this.handleCloseTable);
+class Dashboard extends Component {
+  state = {
+    isFormActive: false,
+    newTodo: {
+      description: '',
+      serviceType: '',
+      task: '',
+    },
+    todos: [{
+      id: 1,
+      date: 'Tomorrow, Jun 24, 16:00',
+      task: 'Install a shower',
+    }, {
+      id: 2,
+      date: 'Monday, Jun 26, 14:00',
+      task: 'I need a plumber to unblock a toilet',
+    }],
+    serviceTypes: [{
+      id: 1,
+      logo: Icon1,
+      title: 'Electrician',
+    }, {
+      id: 2,
+      logo: Icon2,
+      title: 'Plumber',
+    }, {
+      id: 3,
+      logo: Icon3,
+      title: 'Gardener',
+    }, {
+      id: 4,
+      logo: Icon4,
+      title: 'Housekeeper',
+    }, {
+      id: 5,
+      logo: Icon5,
+      title: 'Cook',
+    }],
+    plumberTasks: [
+      'Unblock a toilet',
+      'Unblock a sink',
+      'Fix a water leak',
+      'Install a sink',
+      'Install a shower',
+      'Install a toilet',
+    ],
+  };
+
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleTableClose);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleCloseTable);
+    document.removeEventListener('keydown', this.handleTableClose);
   }
 
-  activateForm() {
-    const newFormState = !this.state.isFormActive;
-    this.setState({
-      isFormActive: newFormState,
-    });
-  }
+  activateForm = () => {
+    this.setState(prevState => ({
+      isFormActive: !prevState.isFormActive,
+    }));
+  };
 
-  deleteTask(date, task) {
-    const deletedTodo = this.state.todos.filter(todo => todo.dete === date && todo.task === task);
-    const newTodos = this.state.todos;
-    newTodos.splice(this.state.todos.indexOf(deletedTodo), 1);
+  deleteTodo = (id) => {
+    const newTodos = this.state.todos.filter(todo => !(todo.id === id));
     this.setState({
       todos: newTodos,
     });
-  }
+  };
 
-  handleCloseTable(event) {
+  handleTableClose = (event) => {
     if (event.keyCode === 27) {
       this.setState({
         isFormActive: false,
       });
     }
-  }
+  };
+
+  handleDescriptionChange = ({ target }) => {
+    this.setState(prevState => ({
+      newTodo: {
+        ...prevState.newTodo,
+        description: target.value,
+      },
+    }));
+  };
+
+  handlePlumberTaskChange = (data) => {
+    this.setState(prevState => ({
+      newTodo: {
+        ...prevState.newTodo,
+        task: data,
+      },
+    }));
+  };
+
+  handleServiceTypeChange = (data) => {
+    this.setState(prevState => ({
+      newTodo: {
+        ...prevState.newTodo,
+        setviceType: data,
+      },
+    }));
+  };
 
   render() {
+    const { isFormActive, newTodo, todos, serviceTypes, plumberTasks } = this.state;
+
     return (
       <div className={styles.dashboard}>
         <div className={styles.dashboard__container}>
           <div className={styles.dashboard__tasks}>
             <AddButton handleClick={this.activateForm} />
             {
-              this.state.todos.map(todo => (
+              todos.map(todo => (
                 <Task
-                  date={todo.date}
-                  deleteTask={this.deleteTask}
-                  key={todo.date}
-                  task={todo.task}
+                  todo={todo}
+                  key={todo.id}
+                  deleteTodo={this.deleteTodo}
                 />
               ))
             }
           </div>
           <div className={styles.dashboard__form}>
-            <AddTable isActive={this.state.isFormActive} />
+            <AddTable
+              isActive={isFormActive}
+              currentTaskDescription={newTodo.description}
+              handleDescriptionChange={this.handleDescriptionChange}
+              plumberTasks={plumberTasks}
+              currentPlumberTask={newTodo.plumberTask}
+              handlePlumberTaskChange={this.handlePlumberTaskChange}
+              serviceTypes={serviceTypes}
+              currentServiceType={newTodo.serviceType}
+              handleServiceTypeChange={this.handleServiceTypeChange}
+            />
           </div>
         </div>
       </div>

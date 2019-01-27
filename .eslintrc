@@ -16,7 +16,11 @@
       }
     ],
     "react/jsx-one-expression-per-line": [{ "allow": "single-child" }],
-    "react/destructuring-assignment": "off"
+    "react/destructuring-assignment": "off",
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "labelComponents": ["label"],
+      "labelAttributes": ["htmlFor"]
+    }],
   },
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
 }

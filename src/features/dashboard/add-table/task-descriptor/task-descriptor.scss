@@ -7,14 +7,22 @@
   &__heading {
     color: #909090;
     text-transform: uppercase;
-    padding: 5px 0;
+    padding: 5px 0 15px;
     font-size: 15px;
   }
   
-  &__text {
+  &__label {
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  &__input {
     font-family: 'Sarabun-Regular';
     font-size: 18px;
     line-height: 1.4em;
-    padding: 10px 0;
+    border: none;
+    width: 100%;
   }
 }
