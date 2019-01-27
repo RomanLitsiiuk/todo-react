@@ -20,13 +20,6 @@
     box-sizing: border-box;
     flex: 1 0 auto;
     font-size: 14px;
-    border: 1px solid transparent;
-    border-radius: 2em;
-    
-    &:hover {
-      cursor: pointer;
-      border: 1px solid #4c71fe;
-    }
   }
   
   &__text {
@@ -35,5 +28,20 @@
     line-height: 1.4em;
     padding: 10px 0;
     text-align: center;
+    border: 1px solid transparent;
+    border-radius: 2em;
+  
+    &:hover {
+      cursor: pointer;
+      border: 1px solid #4c71fe;
+    }
+  }
+  
+  &__radio {
+    display: none;
+    
+    &:checked + .plumber-tasks__text {
+      border: 1px solid #4c71fe;
+    }
   }
 }

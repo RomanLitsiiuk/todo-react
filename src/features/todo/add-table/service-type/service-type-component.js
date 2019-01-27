@@ -11,36 +11,41 @@ const ServiceType = (props) => {
     <div className='service-type'>
       <h3 className='service-type__heading'>Service type</h3>
       <div className='service-type__icons-wrap'>
-        <div className='service-type__icon'>
+        <label className='service-type__icon'>
+          <input type='radio' name='serviceType' className='service-type__radio' />
           <div className='service-type__image-wrap'>
             <img className='service-type__image' src={logo1} alt='icon' />
           </div>
           <p className='service-type__description'>Electrician</p>
-        </div>
-        <div className='service-type__icon'>
+        </label>
+        <label className='service-type__icon'>
+          <input type='radio' name='serviceType' className='service-type__radio' />
           <div className='service-type__image-wrap'>
             <img className='service-type__image' src={logo2} alt='icon' />
           </div>
           <p className='service-type__description'>Plumber</p>
-        </div>
-        <div className='service-type__icon'>
+        </label>
+        <label className='service-type__icon'>
+          <input type='radio' name='serviceType' className='service-type__radio' />
           <div className='service-type__image-wrap'>
             <img className='service-type__image' src={logo3} alt='icon' />
           </div>
           <p className='service-type__description'>Gardener</p>
-        </div>
-        <div className='service-type__icon'>
+        </label>
+        <label className='service-type__icon'>
+          <input type='radio' name='serviceType' className='service-type__radio' />
           <div className='service-type__image-wrap'>
             <img className='service-type__image' src={logo4} alt='icon' />
           </div>
           <p className='service-type__description'>Housekeeper</p>
-        </div>
-        <div className='service-type__icon'>
+        </label>
+        <label className='service-type__icon'>
+          <input type='radio' name='serviceType' className='service-type__radio' />
           <div className='service-type__image-wrap'>
             <img className='service-type__image' src={logo5} alt='icon' />
           </div>
           <p className='service-type__description'>Cook</p>
-        </div>
+        </label>
       </div>
     </div>
   );

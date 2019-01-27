@@ -4,11 +4,13 @@ import NewTask from './new-task/new-task-component';
 import Location from './location/location-component';
 import ServiceType from './service-type/service-type-component';
 import PlumberTask from './plumber-tasks/plumber-tasks-component';
-import TaskDescriptor from "./task-descriptor/task-descriptor";
+import TaskDescriptor from './task-descriptor/task-descriptor';
 
 const AddTable = (props) => {
+  const { isActive } = props;
+
   return (
-    <div className='add-table'>
+    <form className={`add-table ${isActive ? 'add-table--active' : ''}`}>
       <NewTask
         address='My address is 141 Ogunlana Dr, Logos 10128'
         task="I need a plumber to unblock a toilet, my dauther's teddy bear sank in the toilet."
@@ -24,7 +26,7 @@ const AddTable = (props) => {
         'Install a toilet']}
       />
       <TaskDescriptor descriptor="My dauther's teddy bear sank in the toilet" />
-    </div>
+    </form>
   );
 };
 

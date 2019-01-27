@@ -3,7 +3,7 @@ import './task.scss';
 import Button from '../../../shared/button/button-component';
 
 const Task = (props) => {
-  const { date, task } = props;
+  const { date, task, deleteTask } = props;
 
   return (
     <div className='task'>
@@ -14,7 +14,10 @@ const Task = (props) => {
           name='Edit'
           primary
         />
-        <Button name='Delete' />
+        <Button
+          handleClick={deleteTask.bind(null, date, task)}
+          name='Delete'
+        />
       </div>
     </div>
   );

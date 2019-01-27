@@ -11,9 +11,15 @@ const PlumberTask = (props) => {
         {
           tasks.map((func, i) => {
             return (
-              <div className='plumber-tasks__function' key={i}>
+              <label className='plumber-tasks__function'
+                key={i}
+              >
+                <input className='plumber-tasks__radio'
+                  name='plumberTask'
+                  type='radio'
+                />
                 <p className='plumber-tasks__text'>{func}</p>
-              </div>
+              </label>
             );
           })
         }

@@ -22,6 +22,14 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+  
+    &:hover {
+      cursor: pointer;
+      
+      &> .service-type__image-wrap {
+        border: 1px solid #4c71fe;
+      }
+    }
   }
   
   &__image-wrap {
@@ -33,16 +41,19 @@
     justify-content: center;
     border: 1px solid transparent;
     border-radius: 50%;
-    
-    &:hover {
-      cursor: pointer;
-      border: 1px solid #4c71fe;
-    }
   }
   
   &__description {
     font-family: 'Roboto-Regular';
     font-size: 15px;
     padding-top: 10px;
+  }
+  
+  &__radio {
+    display: none;
+  
+    &:checked + .service-type__image-wrap {
+      border: 1px solid #4c71fe;
+    }
   }
 }
