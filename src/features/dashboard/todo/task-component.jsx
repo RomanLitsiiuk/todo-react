@@ -1,6 +1,6 @@
 import React from 'react';
 import './task.scss';
-import Button from '../../../shared/button/button-component';
+import Button from '../../../components/button/button-component';
 
 const Task = (props) => {
   const { date, task, deleteTask } = props;

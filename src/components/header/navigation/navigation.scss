@@ -1,6 +1,6 @@
 .nav {
   height: 100%;
-
+  
   &__list {
     display: flex;
     height: 100%;
@@ -13,12 +13,25 @@
     text-transform: uppercase;
     font-size: 20px;
     display: flex;
-    align-items: center;
     margin: 0 20px;
+    align-content: stretch;
     
     &:hover {
       cursor: pointer;
     }
+    
+    &--last {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      margin-right: 50px;
+    }
+  }
+  
+  &__link {
+    text-decoration: none;
+    color: #272727;
+    padding-top: 30px;
     
     &--active {
       position: relative;
@@ -32,13 +45,6 @@
         position: absolute;
         top: 0;
       }
-    }
-    
-    &--last {
-      position: absolute;
-      right: 0;
-      height: 100%;
-      margin-right: 50px;
     }
   }
 }

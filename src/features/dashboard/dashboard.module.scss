@@ -1,10 +1,12 @@
 @import "../../assets/styles/variables";
 
-.todo {
+.dashboard {
   flex-grow: 1;
+  background-image: url("../../assets/images/map1920.png");
+  background-position: center;
   
   &__container {
-    background-image: url("../../assets/images/map.png");
+    
     min-height: 1200px;
     @extend .container;
     display: flex;

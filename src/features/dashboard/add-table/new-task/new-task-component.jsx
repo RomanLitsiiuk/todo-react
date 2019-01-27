@@ -1,6 +1,6 @@
 import React from 'react';
 import './new-task.scss';
-import Button from '../../../../shared/button/button-component';
+import Button from '../../../../components/button/button-component';
 
 const NewTask = (props) => {
   const { task, address } = props;

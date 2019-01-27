@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import AddButton from './add-button/add-button-component';
-import Task from './task/task-component';
-import styles from './todo.module.scss';
+import Task from './todo/task-component';
+import styles from './dashboard.module.scss';
 import AddTable from './add-table/add-table-component';
 
-class Todo extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,9 +38,7 @@ class Todo extends Component {
   }
 
   deleteTask(date, task) {
-    const deletedTodo = this.state.todos.filter((todo) => {
-      return todo.dete === date && todo.task === task;
-    });
+    const deletedTodo = this.state.todos.filter(todo => todo.dete === date && todo.task === task);
     const newTodos = this.state.todos;
     newTodos.splice(this.state.todos.indexOf(deletedTodo), 1);
     this.setState({
@@ -58,22 +56,22 @@ class Todo extends Component {
 
   render() {
     return (
-      <div className={styles.todo}>
-        <div className={styles.todo__container}>
-          <div className={styles.todo__tasks}>
+      <div className={styles.dashboard}>
+        <div className={styles.dashboard__container}>
+          <div className={styles.dashboard__tasks}>
             <AddButton handleClick={this.activateForm} />
             {
-              this.state.todos.map((todo) => {
-                return <Task
+              this.state.todos.map(todo => (
+                <Task
                   date={todo.date}
                   deleteTask={this.deleteTask}
                   key={todo.date}
                   task={todo.task}
-                />;
-              })
+                />
+              ))
             }
           </div>
-          <div className={styles.todo__form}>
+          <div className={styles.dashboard__form}>
             <AddTable isActive={this.state.isFormActive} />
           </div>
         </div>
@@ -82,4 +80,4 @@ class Todo extends Component {
   }
 }
 
-export default Todo;
+export default Dashboard;

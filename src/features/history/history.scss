@@ -1,0 +1,15 @@
+@import "../../assets/styles/variables";
+
+.history {
+  width: 100%;
+  height: 100%;
+  
+  &__container {
+    @extend .container;
+  }
+  
+  &__heading {
+    font-size: 24px;
+    padding: 20px;
+  }
+}
