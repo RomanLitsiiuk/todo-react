@@ -17,11 +17,13 @@ const AddTable = ({
   currentServiceType,
   handleServiceTypeChange,
   newTodo,
+  addNewTodo,
 }) => (
   <form className={`add-table ${isActive ? 'add-table--active' : ''}`}>
     <NewTask
       address="My address is 141 Ogunlana Dr, Logos 10128"
       newTodo={newTodo}
+      addNewTodo={addNewTodo}
     />
     <Location location="141 Ogunlana Dr, Lagos 10128" />
     <ServiceType

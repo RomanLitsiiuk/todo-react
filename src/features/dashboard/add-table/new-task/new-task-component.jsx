@@ -4,8 +4,9 @@ import Button from '../../../../components/button/button-component';
 
 import './new-task.scss';
 
-const NewTask = ({ newTodo, address }) => {
+const NewTask = ({ newTodo, address, addNewTodo }) => {
   const fullTask = `I need a ${newTodo.serviceType} to ${newTodo.task}, ${newTodo.description}`;
+  const date = 'Tomorrow, Jun 24, 16:00';
 
   return (
     <section className="new-task">
@@ -17,6 +18,7 @@ const NewTask = ({ newTodo, address }) => {
           fontSize="16px"
           name="Create task"
           primary
+          handleClick={() => addNewTodo(fullTask, date)}
         />
       </div>
     </section>

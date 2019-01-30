@@ -81,6 +81,19 @@ class Dashboard extends Component {
     });
   };
 
+  addNewTodo = (fullTask, date) => {
+    this.setState(prevState => ({
+      todos: [
+        ...prevState.todos,
+        {
+          id: fullTask,
+          date: date,
+          task: fullTask,
+        },
+      ],
+    }));
+  };
+
   handleTableClose = (event) => {
     if (event.keyCode === 27) {
       this.setState({
@@ -111,7 +124,7 @@ class Dashboard extends Component {
     this.setState(prevState => ({
       newTodo: {
         ...prevState.newTodo,
-        setviceType: data,
+        serviceType: data,
       },
     }));
   };
@@ -146,6 +159,7 @@ class Dashboard extends Component {
               currentServiceType={newTodo.serviceType}
               handleServiceTypeChange={this.handleServiceTypeChange}
               newTodo={newTodo}
+              addNewTodo={this.addNewTodo}
             />
           </div>
         </div>

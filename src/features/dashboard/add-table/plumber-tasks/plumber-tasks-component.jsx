@@ -12,7 +12,6 @@ const PlumberTask = ({ plumberTasks, currentPlumberTask, handlePlumberTaskChange
               className="plumber-tasks__radio"
               name="plumberTask"
               type="radio"
-              checked={task === currentPlumberTask}
               onChange={() => handlePlumberTaskChange(task)}
             />
             <p className="plumber-tasks__text">{task}</p>
