@@ -5,20 +5,18 @@ import AddTable from './add-table/add-table-component';
 
 import styles from './dashboard.module.scss';
 
-import Icon1 from '../../assets/icons/noun_321339_cc.svg';
-import Icon2 from '../../assets/icons/noun_321315_cc.svg';
-import Icon3 from '../../assets/icons/noun_321363_cc.svg';
-import Icon4 from '../../assets/icons/noun_321399_cc.svg';
-import Icon5 from '../../assets/icons/noun_321395_cc.svg';
+import {
+  serviceTypes,
+  electricianTasks,
+  plumberTasks,
+  gardenerTasks,
+  housekeeperTasks,
+  cookTasks,
+} from '../../assets/constants';
 
 class Dashboard extends Component {
   state = {
     isFormActive: false,
-    newTodo: {
-      description: '',
-      serviceType: '',
-      task: '',
-    },
     todos: [{
       id: 1,
       date: 'Tomorrow, Jun 24, 16:00',
@@ -28,35 +26,11 @@ class Dashboard extends Component {
       date: 'Monday, Jun 26, 14:00',
       task: 'I need a plumber to unblock a toilet',
     }],
-    serviceTypes: [{
-      id: 1,
-      logo: Icon1,
-      title: 'Electrician',
-    }, {
-      id: 2,
-      logo: Icon2,
-      title: 'Plumber',
-    }, {
-      id: 3,
-      logo: Icon3,
-      title: 'Gardener',
-    }, {
-      id: 4,
-      logo: Icon4,
-      title: 'Housekeeper',
-    }, {
-      id: 5,
-      logo: Icon5,
-      title: 'Cook',
-    }],
-    plumberTasks: [
-      'Unblock a toilet',
-      'Unblock a sink',
-      'Fix a water leak',
-      'Install a sink',
-      'Install a shower',
-      'Install a toilet',
-    ],
+    newTodo: {
+      description: '',
+      serviceType: '',
+      task: '',
+    },
   };
 
 
@@ -68,11 +42,10 @@ class Dashboard extends Component {
     document.removeEventListener('keydown', this.handleTableClose);
   }
 
-  activateForm = () => {
-    this.setState(prevState => ({
-      isFormActive: !prevState.isFormActive,
-    }));
-  };
+  setTodoId() {
+    const currentTodos = [...this.state.todos];
+    return currentTodos.reduce((prevId, todo) => (prevId <= todo.id ? todo.id + 1 : prevId), 1);
+  }
 
   deleteTodo = (id) => {
     const newTodos = this.state.todos.filter(todo => !(todo.id === id));
@@ -81,13 +54,19 @@ class Dashboard extends Component {
     });
   };
 
+  activateForm = () => {
+    this.setState(prevState => ({
+      isFormActive: !prevState.isFormActive,
+    }));
+  };
+
   addNewTodo = (fullTask, date) => {
     this.setState(prevState => ({
       todos: [
         ...prevState.todos,
         {
-          id: fullTask,
-          date: date,
+          id: this.setTodoId(),
+          date,
           task: fullTask,
         },
       ],
@@ -111,7 +90,7 @@ class Dashboard extends Component {
     }));
   };
 
-  handlePlumberTaskChange = (data) => {
+  handleTaskChange = (data) => {
     this.setState(prevState => ({
       newTodo: {
         ...prevState.newTodo,
@@ -130,7 +109,9 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { isFormActive, newTodo, todos, serviceTypes, plumberTasks } = this.state;
+    const {
+      isFormActive, newTodo, todos,
+    } = this.state;
 
     return (
       <div className={styles.dashboard}>
@@ -152,9 +133,15 @@ class Dashboard extends Component {
               isActive={isFormActive}
               currentTaskDescription={newTodo.description}
               handleDescriptionChange={this.handleDescriptionChange}
-              plumberTasks={plumberTasks}
-              currentPlumberTask={newTodo.plumberTask}
-              handlePlumberTaskChange={this.handlePlumberTaskChange}
+              workerTasks={{
+                electrician: electricianTasks,
+                plumber: plumberTasks,
+                gardener: gardenerTasks,
+                housekeeper: housekeeperTasks,
+                cook: cookTasks,
+              }}
+              currentTask={newTodo.task}
+              handleTaskChange={this.handleTaskChange}
               serviceTypes={serviceTypes}
               currentServiceType={newTodo.serviceType}
               handleServiceTypeChange={this.handleServiceTypeChange}

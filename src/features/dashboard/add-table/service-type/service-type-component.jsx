@@ -2,7 +2,7 @@ import React from 'react';
 
 import './service-type.scss';
 
-const ServiceType = ({ serviceTypes, currentServiceType, handleServiceTypeChange }) => (
+const ServiceType = ({ serviceTypes, newTodo, handleServiceTypeChange }) => (
   <div className="service-type">
     <h3 className="service-type__heading">Service type</h3>
     <div className="service-type__icons-wrap">
@@ -13,7 +13,7 @@ const ServiceType = ({ serviceTypes, currentServiceType, handleServiceTypeChange
               type="radio"
               name="serviceType"
               className="service-type__radio"
-              checked={currentServiceType === serviceType.title}
+              checked={newTodo.serviceType === serviceType.title}
               onChange={() => handleServiceTypeChange(serviceType.title)}
             />
             <div className="service-type__image-wrap">
