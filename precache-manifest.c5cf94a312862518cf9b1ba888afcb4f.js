@@ -48,10 +48,6 @@ self.__precacheManifest = [
     "url": "/todo-react/static/media/Sarabun-Regular.9cef964b.ttf"
   },
   {
-    "revision": "23237c2ccdc6e9ef7cddd0bf4078f589",
-    "url": "/todo-react/static/media/Sarabun-Italic.23237c2c.ttf"
-  },
-  {
     "revision": "4f70ff7dd351fe841b15de5a88a499aa",
     "url": "/todo-react/static/media/Sarabun-Bold.4f70ff7d.ttf"
   },
@@ -60,16 +56,20 @@ self.__precacheManifest = [
     "url": "/todo-react/static/media/Sarabun-Light.83ccca1d.ttf"
   },
   {
+    "revision": "23237c2ccdc6e9ef7cddd0bf4078f589",
+    "url": "/todo-react/static/media/Sarabun-Italic.23237c2c.ttf"
+  },
+  {
     "revision": "3e1af3ef546b9e6ecef9f3ba197bf7d2",
     "url": "/todo-react/static/media/Roboto-Regular.3e1af3ef.ttf"
   },
   {
-    "revision": "ee7b96fa85d8fdb8c126409326ac2d2b",
-    "url": "/todo-react/static/media/Roboto-Bold.ee7b96fa.ttf"
-  },
-  {
     "revision": "fc84e998bc29b297ea20321e4c90b6ed",
     "url": "/todo-react/static/media/Roboto-Light.fc84e998.ttf"
+  },
+  {
+    "revision": "ee7b96fa85d8fdb8c126409326ac2d2b",
+    "url": "/todo-react/static/media/Roboto-Bold.ee7b96fa.ttf"
   },
   {
     "revision": "0c66215d61470a5bf3e3",
