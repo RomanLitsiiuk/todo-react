@@ -6,9 +6,8 @@
   background-position: center;
   
   &__container {
-    
-    min-height: 1200px;
     @extend .container;
+    min-height: 1200px;
     display: flex;
     justify-content: space-between;
   }
@@ -23,5 +22,6 @@
   &__form {
     max-width: 500px;
     width: 100%;
+    position: relative;
   }
 }

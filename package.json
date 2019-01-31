@@ -19,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,6 +35,8 @@
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.15.0",
-    "eslint-plugin-jsx-a11y": "^6.2.0"
-  }
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "gh-pages": "^2.0.1"
+  },
+  "homepage": "http://RomanLitsiiuk.github.io/todo-react"
 }
